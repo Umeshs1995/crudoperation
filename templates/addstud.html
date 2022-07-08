@@ -1,0 +1,28 @@
+{% extends 'home.html' %}
+{% block content %}
+<h1> Add New Student </h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="">Student Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter Name"><br><br>
+
+        <label for="">Student Email</label>
+        <input type="text" id="email" name="email" placeholder="Enter Email"><br><br>
+
+        <label for="">Student Division</label>
+        <input type="text" id="div" name="div" placeholder="Enter Division"><br><br>
+
+        <label for="">Student Join Date</label>
+        <input type="text" id="doj" name="doj" placeholder="Enter Date of Join"><br><br>
+
+        <label for="">Student Marks</label>
+        <input type="text" id="marks" name="marks" placeholder="Enter Mark"><br><br>
+
+        <label for="">Student Contact </label>
+        <input type="text" id="mob" name="mob" placeholder="Contact Number"><br><br>
+
+        <label for="">Student Location </label>
+        <input type="text" id="loc" name="loc" placeholder="Enter Location"><br><br>
+    <button type="submit"> Add </button>
+    </form>
+{% endblock %}

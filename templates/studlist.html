@@ -1,0 +1,37 @@
+{% extends 'home.html' %}
+{% block content %}
+<h1> List Of Student </h1><hr><hr>
+<form action="/" method="post">
+{% if students %}
+    <table>
+        <thead>
+        <th>id</th>
+        <th>Student Name</th>
+        <th>Student Email &nbsp;</th>
+        <th>Student Division &nbsp;</th>
+        <th>Student Joining &nbsp;</th>
+        <th>Student Marks &nbsp;</th>
+        <th>Student contact &nbsp;</th>
+        <th>Student Location &nbsp;</th>
+        <th> Action &nbsp;</th>
+        </thead>
+        {% for stud in students %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{stud.name}}</td>
+            <td>{{stud.email}}</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{stud.div}}</td>
+            <td>&nbsp;&nbsp;{{stud.doj}}</td>
+            <td>&nbsp;&nbsp;{{stud.marks}}</td>
+            <td>&nbsp;&nbsp;{{stud.mob}}</td>
+            <td>&nbsp;&nbsp;{{stud.loc}}</td>
+            <td>
+                <a href="http://127.0.0.1:8000/delete/{{stud.id}}" title="Delete" >Delete</a>
+                <a href="http://127.0.0.1:8000/edit/{{stud.id}}" title="Edit" >Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+</form>
+{% endblock %}
